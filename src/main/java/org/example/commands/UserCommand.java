@@ -11,6 +11,9 @@ public class UserCommand {
         this.apiService = new APIService(token);
     }
 
+    /**
+     * Call API Service to execute an endpoint that will retrieve all existing user details
+     */
     public void executeGetUser() {
         try {
             String userDetails = apiService.getAllUsers();
@@ -20,6 +23,12 @@ public class UserCommand {
         }
     }
 
+    /**
+     * Call API Service to execute an endpoint that will create a new user
+     * @param username String
+     * @param password String
+     * @param email String
+     */
     public void executeAddNewUser(String username, String password, String email){
         try {
             String userDetails = apiService.addNewUserAccount(username,password,email);
@@ -30,6 +39,10 @@ public class UserCommand {
     }
 
 
+    /**
+     * Call API Service to execute an endpoint that will delete an existing user details
+     * @param username String
+     */
   public void executeDeleteUser(String username){
         try {
             String userDetails = apiService.deleteUserAccount(username);

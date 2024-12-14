@@ -11,6 +11,9 @@ public class RepositoryCommand {
         this.apiService = new APIService(token);
     }
 
+    /**
+     * Call the API service to execute an endpoint to retrieve all existing repositories
+     */
     public void executeGetRepositories() {
         try {
             String repoDetails= apiService.getAllRepositories();
@@ -20,6 +23,10 @@ public class RepositoryCommand {
         }
     }
 
+    /**
+     * Call API Service to execute an endpoint to create a new repository
+     * @param repoName String
+     */
     public void executeAddNewRepository(String repoName) {
         try {
             String repoDetails = apiService.addNewRepository(repoName);

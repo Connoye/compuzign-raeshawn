@@ -27,7 +27,7 @@ public class MenuOptionCommand {
 
             Scanner scanner = new Scanner(System.in);
             System.out.println();
-            System.out.println("Select a command: ");
+            System.out.print("Select a command: ");
             String command = scanner.nextLine();
 
             if(command.isEmpty()) {
@@ -43,9 +43,6 @@ public class MenuOptionCommand {
      * @param command String
      */
     public static void commandOption(String command){
-        if(!validToken()){
-            System.err.println("Secret key not found!");
-        }else {
             String username;
             String password;
             String email;
@@ -88,15 +85,6 @@ public class MenuOptionCommand {
                     System.out.println("You have entered an invalid command.");
             }
             displayMethodNames();
-        }
-    }
-
-    /**
-     * Validate access token
-     * @return boolean
-     */
-    public static boolean validToken() {
-        return TOKEN != null && !TOKEN.isEmpty();
     }
 
     /**
@@ -106,7 +94,7 @@ public class MenuOptionCommand {
     public static String passwordValidation(){
         passwordRequirement();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter password: ");
+        System.out.print("Enter password: ");
         String password = scanner.nextLine();
         // Regex to check valid password.
         String regex = "^(?=.*[0-9])"
@@ -184,7 +172,7 @@ public class MenuOptionCommand {
     public static String usernameValidation(){
         usernameRequirement();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter username: ");
+        System.out.print("Enter username: ");
         String username = scanner.nextLine();
         // Regex to check valid username.
         String regex = "^[A-Za-z]\\w{5,29}$";
@@ -217,7 +205,7 @@ public class MenuOptionCommand {
     public static String repoNameValidation(){
         repositoryRequirement();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter repository name: ");
+        System.out.print("Enter repository name: ");
         String repoName = scanner.nextLine();
         // Regex to check valid repository name.
         String regex = "^[A-Za-z]\\w{8,63}$";
@@ -248,7 +236,7 @@ public class MenuOptionCommand {
      */
     public static String emailValidation(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter email: ");
+        System.out.print("Enter email: ");
         String email = scanner.nextLine();
 
         // Regular expression to match valid email formats

@@ -10,6 +10,9 @@ public class SystemCommand{
         this.apiService = new APIService(token);
     }
 
+    /**
+     * Call API Service to execute an endpoint that will ping the system
+     */
     public void executeSystemPing() {
         try {
             String pingSystem = apiService.pingSystem();
@@ -20,6 +23,9 @@ public class SystemCommand{
     }
 
 
+    /**
+     * Call API Service to execute an endpoint that will retrieve the system version
+     */
     public void executeSystemVersion() {
         try {
             String versionSystem = apiService.versionSystem();

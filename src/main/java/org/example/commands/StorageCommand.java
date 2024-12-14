@@ -11,6 +11,9 @@ public class StorageCommand {
         this.apiService = new APIService(token);
     }
 
+    /**
+     * Call API Service to execute an endpoint that will retrieve the storage information
+     */
     public void executeGetStorageInfo() {
         try {
             String storageInfo = apiService.getStorageInfo();

@@ -17,14 +17,14 @@ public class MainCli {
         System.out.println("Maven CLI Tool. Please to use help for available commands.");
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Do you wish to log into the Maven CLI? Y or N ");
+        System.out.print("Do you wish to log into the Maven CLI? Y or N: ");
         String option = scanner.nextLine();
         switch(option){
             case "Y","y":
                 System.out.println("Please enter your login credentials");
-                System.out.println("Username: ");
+                System.out.print("Username: ");
                 String user = scanner.nextLine();
-                System.out.println("Password: ");
+                System.out.print("Password: ");
                 String pswd = scanner.nextLine();
                 while(option.equalsIgnoreCase("y")){
                     if(user.equalsIgnoreCase(USERNAME) && pswd.equals(PASSWORD)){
@@ -40,9 +40,9 @@ public class MainCli {
                             break;
 
                         System.out.println("Please enter your login credentials");
-                        System.out.println("Username: ");
+                        System.out.print("Username: ");
                         user = scanner.nextLine();
-                        System.out.println("Password: ");
+                        System.out.print("Password: ");
                         pswd = scanner.nextLine();
                     }
                 }

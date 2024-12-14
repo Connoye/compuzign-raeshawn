@@ -9,9 +9,7 @@ import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.ClassicHttpRequest;
 import org.apache.hc.core5.http.ContentType;
-import org.apache.hc.core5.http.impl.io.HttpRequestExecutor;
 import org.apache.hc.core5.http.io.entity.StringEntity;
-import org.example.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,16 +66,17 @@ public class APIService {
     public String addNewUserAccount(String username, String password, String email) throws IOException {
         HttpPost request = new HttpPost(JFROG_API_BASE_URL + "/v2/users");
         ObjectMapper objectMapper = new ObjectMapper();
-        User user = new User();
-        user.setAdmin(false);
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setProfile_updatable(true);
-        user.setInternal_password_disabled(false);
-        user.setDisable_ui_access(false);
-        user.setGroups(new ArrayList<>(Collections.singletonList("readers")));
-        request.setEntity(new StringEntity(objectMapper.writeValueAsString(user), ContentType.APPLICATION_JSON));
+        Map<String,Object> newUser = new HashMap<>();
+        newUser.put("admin",false);
+        newUser.put("username",username);
+        newUser.put("password",password);
+        newUser.put("email",email);
+        newUser.put("profile_updatable",true);
+        newUser.put("internal_password_disabled",false);
+        newUser.put("disable_ui_access",false);
+        newUser.put("groups",new ArrayList<>(Collections.singletonList("readers")));
+
+        request.setEntity(new StringEntity(objectMapper.writeValueAsString(newUser), ContentType.APPLICATION_JSON));
         return executeRequest(request);
     }
 
