@@ -1,0 +1,27 @@
+name: Maven CLI - CompuZign Assessment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Inject Secret and Build with Maven
+        env:
+          TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
+        run: |
+          echo "Using secret key: TOKEN_KEY"
+          mvn clean package
