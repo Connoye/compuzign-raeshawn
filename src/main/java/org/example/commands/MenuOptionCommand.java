@@ -9,7 +9,7 @@ import static java.lang.System.exit;
 
 public class MenuOptionCommand {
 
-    private static  final String TOKEN = System.getenv("TOKEN_KEY");
+    private static  final String TOKEN = "eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJYenpvRy1JLXp6dnlRcThQV1pHenVERmM4eHNuRHJKM200SEl6RzcyeS0wIn0.eyJzdWIiOiJqZmFjQDAxamVqbTVhNmQ2czVxMTB5NWp6MWcxbTg2L3VzZXJzL2dvcmNvbiIsInNjcCI6ImFwcGxpZWQtcGVybWlzc2lvbnMvdXNlciIsImF1ZCI6IipAKiIsImlzcyI6ImpmZmVAMDFqZWptNWE2ZDZzNXExMHk1anoxZzFtODYiLCJpYXQiOjE3MzM3MTE0NzMsImp0aSI6IjA5ZTRhMzkzLWYzOGEtNGRlNy1hNTM2LTg4OTM0NjM2NDU0OSIsInRpZCI6ImEwZHMzdXQzbmxjeWQifQ.Apqcq7Grs2L04KOR0D1dF1KhPGp8UKYJJs0vpdyOa4-uMPDVSXZOnBrtYVSqMStTKw2Ufc_vcwKWfA1xh9b90yzW9sN4xJ-SNhfxg94LbrByR6p9TWIo0E085L_az8xD8x66kizcaHIfETsLIeyQdXvGmiIuNyeHI7omJdW6NGks0JnXypjq7i5B0-6giAUr9qejp8yUn8AHQ0wjhDWIudFZSM-21FQCy31cGz4QTklsZg15O6ArGyettKxY21_5EzHqb58XeBDfcNoRSa7RG1zzLlwomkUu5D80PihutV4k0i-pqMfhriCtRyAbr1Zbb0Sneuc2UdRMlr5kvXPwKQ";//System.getenv("TOKEN_KEY");
 
     /**
      * Display a list of commands available
