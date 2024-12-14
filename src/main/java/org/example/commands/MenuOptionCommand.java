@@ -43,49 +43,60 @@ public class MenuOptionCommand {
      * @param command String
      */
     public static void commandOption(String command){
-        String username;
-        String password;
-        String email;
-        Scanner scanner = new Scanner(System.in);
-        switch (command) {
-            case "get_users":
-                new UserCommand(TOKEN).executeGetUser();
-                break;
-            case "create_user":
-                username = usernameValidation();
-                password = passwordValidation();
-                email = emailValidation();
-                new UserCommand(TOKEN).executeAddNewUser(username, password, email);
-                break;
-            case "delete_user":
-                username = usernameValidation();
-                new UserCommand(TOKEN).executeDeleteUser(username);
-                break;
-            case "get_repos":
-                new RepositoryCommand(TOKEN).executeGetRepositories();
-                break;
-            case "create_repo":
-                System.out.println("Enter repository name: ");
-                String repoName = repoNameValidation();
-                new RepositoryCommand(TOKEN).executeAddNewRepository(repoName);
-                break;
-            case "sys_ping":
-                new SystemCommand(TOKEN).executeSystemPing();
-                break;
-            case "sys_version":
-                new SystemCommand(TOKEN).executeSystemVersion();
-                break;
-            case "storage_info":
-                new StorageCommand(TOKEN).executeGetStorageInfo();
-                break;
-            case "exit":
-                System.out.println("Thank you for using our Maven CLI. Goodbye!");
-                exit(0);
-                break;
-            default:
-                System.out.println("You have entered an invalid command.");
+        if(!validToken()){
+            System.err.println("Secret key not found!");
+        }else {
+            String username;
+            String password;
+            String email;
+            switch (command) {
+                case "get_users":
+                    new UserCommand(TOKEN).executeGetUser();
+                    break;
+                case "create_user":
+                    username = usernameValidation();
+                    password = passwordValidation();
+                    email = emailValidation();
+                    new UserCommand(TOKEN).executeAddNewUser(username, password, email);
+                    break;
+                case "delete_user":
+                    username = usernameValidation();
+                    new UserCommand(TOKEN).executeDeleteUser(username);
+                    break;
+                case "get_repos":
+                    new RepositoryCommand(TOKEN).executeGetRepositories();
+                    break;
+                case "create_repo":
+                    System.out.println("Enter repository name: ");
+                    String repoName = repoNameValidation();
+                    new RepositoryCommand(TOKEN).executeAddNewRepository(repoName);
+                    break;
+                case "sys_ping":
+                    new SystemCommand(TOKEN).executeSystemPing();
+                    break;
+                case "sys_version":
+                    new SystemCommand(TOKEN).executeSystemVersion();
+                    break;
+                case "storage_info":
+                    new StorageCommand(TOKEN).executeGetStorageInfo();
+                    break;
+                case "exit":
+                    System.out.println("Thank you for using our Maven CLI. Goodbye!");
+                    exit(0);
+                    break;
+                default:
+                    System.out.println("You have entered an invalid command.");
+            }
+            displayMethodNames();
         }
-        displayMethodNames();
+    }
+
+    /**
+     * Validate access token
+     * @return boolean
+     */
+    public static boolean validToken() {
+        return TOKEN != null && !TOKEN.isEmpty();
     }
 
     /**
