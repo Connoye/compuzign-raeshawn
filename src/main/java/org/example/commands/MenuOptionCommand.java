@@ -142,8 +142,8 @@ public class MenuOptionCommand {
      */
     public static void usernameRequirement(){
         System.out.println("""
-                - The username consists of 6 to 30 characters inclusive. If the username
-                consists of less than 6 or greater than 30 characters, then it is an invalid username.
+                - The username consists of 5 to 30 characters inclusive. If the username
+                consists of less than 5 or greater than 30 characters, then it is an invalid username.
                 - The username can only contain alphanumeric characters and underscores (_). Alphanumeric characters
                 describe the character set consisting of lowercase characters [a – z], uppercase characters [A – Z], and digits [0 – 9].
                 - The first character of the username must be an alphabetic character, i.e., either lowercase character
@@ -175,7 +175,7 @@ public class MenuOptionCommand {
         System.out.print("Enter username: ");
         String username = scanner.nextLine();
         // Regex to check valid username.
-        String regex = "^[A-Za-z]\\w{5,29}$";
+        String regex = "^[A-Za-z]\\w{4,29}$";
 
         // Compile the ReGex
         Pattern p = Pattern.compile(regex);
