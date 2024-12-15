@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class MainCli {
 
-    private static final String USERNAME = "test";
-    private static final String PASSWORD = "P@ssw0rd.12345";
+    private static final String USERNAME = "jfrog_user";
+    private static final String PASSWORD = "P@ssw0rd12345";
 
     public static void main(String[] args) {
         Menu();
