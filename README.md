@@ -27,9 +27,18 @@ Please implement at least five of the following APIs, with at least one example 
 - The assignment duration is up to a week since I sent it to you. Extensions can be provided in special cases.
 
 # Documentation
+
+## _Pre-requisite_
+- [Java version 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+
 ## _Credentials_
 - Username: [In documentation]
 - Password: [In documentation]
+
+## _How to run CLI?_
+After downloading the compuzign-raeshawn-1.0-SNAPSHOT.jar file (Located using the Final Package File link above), open your terminal and navigate to where the jar file was saved. Ensure that Java version 17 is installed on your desktop/laptop. Run the following command to start the CLI project:
+<br/>
+#### _java -jar compuzign-raeshawn-1.0-SNAPSHOT.jar_
 
 # Approach
 This CLI exhibits flexibility, modularity, and user-friendliness by showing how to administer an Artifactory SaaS instance programmatically. Maven was used with the Java framework to create this project. The Apache HttpClient 5 library was used from the maven repository to make the service calls to the JFrog Platform REST APIs to execute the different commands as needed.
